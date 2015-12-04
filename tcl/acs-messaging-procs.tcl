@@ -44,7 +44,7 @@ ad_proc -public acs_messaging_format_as_html {
     @param content   Text to view
 } {
     if {$mime_type eq "text/plain"} {
-	set result "<pre>[ad_quotehtml $content]</pre>"
+	set result "<pre>[ns_quotehtml $content]</pre>"
     } elseif {$mime_type eq "text/plain; format=flowed"} {
 	set result [ad_text_to_html -- $content]
     } elseif {$mime_type eq "text/html"} {
@@ -155,3 +155,9 @@ ad_proc -private acs_messaging_process_queue {
         }
     }
 }
+
+# Local variables:
+#    mode: tcl
+#    tcl-indent-level: 4
+#    indent-tabs-mode: nil
+# End:
